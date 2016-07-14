@@ -9,7 +9,8 @@
   "dependencies": {},
   "devDependencies": {
     "jshint": "^2.9.2",
-    "promises-aplus-tests": "^2.1.2"
+    "promises-aplus-tests": "^2.1.2",
+    "uglify-js": "^2.7.0"
   },
   "homepage": "https://github.com/kawanet/promise-minimal#readme",
   "jshintConfig": {
@@ -28,6 +29,7 @@
     "url": "https://github.com/kawanet/promise-minimal.git"
   },
   "scripts": {
+    "build": "./node_modules/.bin/uglifyjs promini.js -c -m -o dist/promini.min.js",
     "fixpack": "fixpack",
     "jshint": "./node_modules/.bin/jshint ./*.js* test",
     "promises-aplus-tests": "./node_modules/.bin/promises-aplus-tests test/adapter.js",
