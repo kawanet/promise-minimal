@@ -1,22 +1,35 @@
 {
   "name": "promise-minimal",
+  "description": "Promini: Promise/A+ Minimal",
   "version": "1.0.0",
   "author": "@kawanet",
+  "bugs": {
+    "url": "https://github.com/kawanet/promise-minimal/issues"
+  },
+  "dependencies": {},
   "devDependencies": {
     "jshint": "^2.9.2",
     "promises-aplus-tests": "^2.1.2"
   },
+  "homepage": "https://github.com/kawanet/promise-minimal#readme",
   "jshintConfig": {
-    "node": true,
     "eqnull": true,
+    "node": true,
     "undef": true,
     "unused": true
   },
+  "keywords": [
+    "Promise"
+  ],
   "license": "MIT",
   "main": "promini.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kawanet/promise-minimal.git"
+  },
   "scripts": {
     "fixpack": "fixpack",
-    "jshint": "jshint ./*.js* test",
+    "jshint": "./node_modules/.bin/jshint ./*.js* test",
     "promises-aplus-tests": "./node_modules/.bin/promises-aplus-tests test/adapter.js",
     "test": "npm run jshint && npm run promises-aplus-tests"
   }
