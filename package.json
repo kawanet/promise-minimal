@@ -1,0 +1,23 @@
+{
+  "name": "promise-minimal",
+  "version": "1.0.0",
+  "author": "@kawanet",
+  "devDependencies": {
+    "jshint": "^2.9.2",
+    "promises-aplus-tests": "^2.1.2"
+  },
+  "jshintConfig": {
+    "node": true,
+    "eqnull": true,
+    "undef": true,
+    "unused": true
+  },
+  "license": "MIT",
+  "main": "promini.js",
+  "scripts": {
+    "fixpack": "fixpack",
+    "jshint": "jshint ./*.js* test",
+    "promises-aplus-tests": "./node_modules/.bin/promises-aplus-tests test/adapter.js",
+    "test": "npm run jshint && npm run promises-aplus-tests"
+  }
+}
