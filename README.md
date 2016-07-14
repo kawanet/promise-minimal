@@ -1,6 +1,7 @@
-# promise-minimal
+# Promini: Promise/A+ Minimal
 
-Promini: Promise/A+ Minimal
+UNDERCONSTRUCTION:
+[Promises/A+ Compliance Test Suite](https://github.com/promises-aplus/promises-tests) 2.2.7 and 2.3.3 fail.
 
 ### GitHub
 

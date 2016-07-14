@@ -71,26 +71,28 @@ function Promini(func) {
 
     function job() {
       var result = that._result;
+      var isRejected = (that._stat === 2);
       try {
-        if (that._stat === 2) {
+        if (isRejected) {
           if (onRejected) {
             result = onRejected(result);
-          } else {
-            return afterReject(result);
+            isRejected = 0;
           }
         } else if (onFulfilled) {
           result = onFulfilled(result);
         }
-
-        // 2.3.1: If `promise` and `x` refer to the same object,
-        // reject `promise` with a `TypeError' as the reason.
-        if (result === promise) {
-          return afterReject(new TypeError());
-        }
-
-        afterFulfill(result);
       } catch (e) {
         afterReject(e);
+      }
+
+      if (isRejected) {
+        afterReject(result);
+      } else if (result === promise) {
+        // 2.3.1: If `promise` and `x` refer to the same object,
+        // reject `promise` with a `TypeError' as the reason.
+        afterReject(new TypeError());
+      } else {
+        afterFulfill(result);
       }
     }
   };
